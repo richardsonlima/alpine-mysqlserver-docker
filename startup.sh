@@ -1,15 +1,15 @@
 #!/bin/sh
 
 if [ -d /app/mysql ]; then
-  echo "[i] MySQL directory already present, skipping creation"
+  echo -e "\033[1;33m [i] MySQL directory already present, skipping creation \033[0m"
 else
-  echo "[i] MySQL data directory not found, creating initial DBs"
+  echo -e "\033[1;33m [i] MySQL data directory not found, creating initial DBs \033[0m"
 
   mysql_install_db --user=root > /dev/null
 
   if [ "$MYSQL_ROOT_PASSWORD" = "" ]; then
     MYSQL_ROOT_PASSWORD=JwYKj8tSnpyDFUdGuA==J
-    echo "[i] MySQL root Password: $MYSQL_ROOT_PASSWORD"
+    echo -e '\033[1;33m [i] MySQL root Password: $MYSQL_ROOT_PASSWORD \033[0m'
   fi
 
   MYSQL_DATABASE=${MYSQL_DATABASE:-""}
@@ -34,11 +34,11 @@ UPDATE user SET password=PASSWORD("") WHERE user='root' AND host='localhost';
 EOF
 
   if [ "$MYSQL_DATABASE" != "" ]; then
-    echo "[i] Creating database: $MYSQL_DATABASE"
+    echo -e "\033[1;33m [i] Creating database: $MYSQL_DATABASE \033[0m"
     echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\` CHARACTER SET utf8 COLLATE utf8_general_ci;" >> $tfile
 
     if [ "$MYSQL_USER" != "" ]; then
-      echo "[i] Creating user: $MYSQL_USER with password $MYSQL_PASSWORD"
+      echo -e "\033[1;33m [i] Creating user: $MYSQL_USER with password $MYSQL_PASSWORD \033[0m"
       echo "GRANT ALL ON \`$MYSQL_DATABASE\`.* to '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" >> $tfile
     fi
   fi
