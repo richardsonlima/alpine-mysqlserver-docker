@@ -9,7 +9,7 @@ else
 
   if [ "$MYSQL_ROOT_PASSWORD" = "" ]; then
     MYSQL_ROOT_PASSWORD=JwYKj8tSnpyDFUdGuA==J
-    echo -e '\033[1;33m [i] MySQL root Password: $MYSQL_ROOT_PASSWORD \033[0m'
+    echo -e '\033[1;33m [i] MySQL ROOT Password: $MYSQL_ROOT_PASSWORD \033[0m'
   fi
 
   MYSQL_DATABASE=${MYSQL_DATABASE:-""}
