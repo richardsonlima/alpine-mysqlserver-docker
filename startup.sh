@@ -34,7 +34,7 @@ UPDATE user SET password=PASSWORD("") WHERE user='root' AND host='localhost';
 EOF
 
   if [ "$MYSQL_DATABASE" != "" ]; then
-    echo -e "\033[1;33m [i] Creating database: $MYSQL_DATABASE \033[0m"
+    echo -e "\033[1;33m [i] Creating Database: $MYSQL_DATABASE \033[0m"
     echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\` CHARACTER SET utf8 COLLATE utf8_general_ci;" >> $tfile
 
     if [ "$MYSQL_USER" != "" ]; then
