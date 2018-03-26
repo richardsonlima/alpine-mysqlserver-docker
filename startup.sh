@@ -3,7 +3,7 @@
 if [ -d /db/mysql ]; then
   echo -e "\033[1;33m [i] MySQL directory already present, skipping creation \033[0m"
 else
-  echo -e "\033[1;33m [i] MySQL data directory not found, creating initial DBs \033[0m"
+  echo -e "\033[1;33m [i] MySQL data directory not found, creating initial DB \033[0m"
 
   mysql_install_db --user=root > /dev/null
 
