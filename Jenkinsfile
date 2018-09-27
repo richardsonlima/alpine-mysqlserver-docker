@@ -24,6 +24,7 @@ node {
 
         stage('container_up') {
             dir(env.WORKSPACE) {
+                sh "mkdir ./mysql-persistence"
                 sh(script: "docker-compose up --build -d")
             }
         }
