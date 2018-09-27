@@ -1,6 +1,6 @@
 mysql:
   build: .
   volumes:
-   - ./x:/z
+   - ./mysql-persistence:/var/lib/mysql
   ports:
    - "4306:3306"
