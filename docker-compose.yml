@@ -1,0 +1,6 @@
+mysql:
+  build: .
+  volumes:
+   - ./x:/z
+  ports:
+   - "4306:3306"
