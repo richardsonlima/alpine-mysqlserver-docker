@@ -3,7 +3,7 @@ node {
         def BRANCH_NAME = "master"
         def IMAGE_VERSION = "v-$BUILD_NUMBER"
         def REPO_GIT = "https://github.com/richardsonlima/alpine-mysqlserver-docker.git"
-        def REGISTRY_REPO = "richardsonlima/alpine-nginx-php"
+        def REGISTRY_REPO = "richardsonlima/alpine-mysqlserver"
 
         stage("cloning_project") {
                 checkout([$class: 'GitSCM',
